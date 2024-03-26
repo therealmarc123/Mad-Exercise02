@@ -7,24 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.movieappmad24.models.getMovies
 import com.example.movieappmad24.ui.theme.MovieAppMAD24Theme
-import com.example.movieappmad24.models.*
 import com.example.movieappmad24.models.movieCards.*
+import com.example.movieappmad24.navigation.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MovieAppMAD24Theme {
-                DisplayScreen()
-            }
+                Navigation()
         }
-    }
-}
-
-@Preview
-@Composable
-fun DefaultPreview(){
-    MovieAppMAD24Theme {
-        MovieList(movies = getMovies())
     }
 }
