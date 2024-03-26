@@ -1,4 +1,4 @@
-package com.example.movieappmad24.models.screens
+package com.example.movieappmad24.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 
 import androidx.compose.foundation.layout.Column
 import androidx.navigation.NavController
-import com.example.movieappmad24.models.widgets.MovieImageSlider
+import com.example.movieappmad24.widgets.MovieImageSlider
 import com.example.movieappmad24.models.movieCards.MovieRow
 import com.example.movieappmad24.navigation.*
 import com.example.movieappmad24.models.getMovies
@@ -22,10 +22,10 @@ fun DetailScreen(movieId: String?, navController: NavController) {
         if (movie != null) {
             Scaffold(
                 topBar = {
-                    CustomTopBar(title = movie.title, navController = navController)
+                    SimpleTopAppBar(title = movie.title, navController = navController)
                          },
                 bottomBar = {
-                    CustomBottomBar(navController)
+                    SimpleBottomAppBar(navController)
                 }
             ) { padding ->
                 Surface(

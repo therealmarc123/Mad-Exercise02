@@ -1,4 +1,4 @@
-package com.example.movieappmad24.models.screens
+package com.example.movieappmad24.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,8 +16,8 @@ import com.example.movieappmad24.navigation.*
 @Composable
 fun HomeScreen(navController: NavController) {
     Scaffold(
-        topBar = { CustomTopBar() },
-        bottomBar = { CustomBottomBar(navController) }
+        topBar = { SimpleTopAppBar() },
+        bottomBar = { SimpleBottomAppBar(navController) }
     ) { padding ->
         Surface(
             modifier = Modifier

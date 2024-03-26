@@ -1,4 +1,4 @@
-package com.example.movieappmad24.models.screens
+package com.example.movieappmad24.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,10 +16,10 @@ import com.example.movieappmad24.models.getMovies
 fun WatchlistScreen(navController: NavController) {
     Scaffold(
         topBar = {
-            CustomTopBar(title = "Your Watchlist")
+            SimpleTopAppBar(title = "Your Watchlist")
                  },
         bottomBar = {
-            CustomBottomBar(navController)
+            SimpleBottomAppBar(navController)
         }
     ) { padding ->
         Surface(

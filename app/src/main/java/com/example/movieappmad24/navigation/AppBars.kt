@@ -16,12 +16,11 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
-import com.example.movieappmad24.navigation.AppScreen.Main.route
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomTopBar(title: String = "Movie App", navController: NavController? = null) {
+fun SimpleTopAppBar(title: String = "Movie App", navController: NavController? = null) {
     CenterAlignedTopAppBar(
         title = { Text(text = title) },
         colors = TopAppBarDefaults.topAppBarColors(
@@ -43,7 +42,7 @@ fun CustomTopBar(title: String = "Movie App", navController: NavController? = nu
 }
 
 @Composable
-fun CustomBottomBar(navController: NavController) {
+fun SimpleBottomAppBar(navController: NavController) {
     val navigationItems = listOf(
         NavigationItem("Home", Icons.Filled.Home, "Go to Home", AppScreen.Main.route),
         NavigationItem("Watchlist", Icons.Filled.Star, "Go to Watchlist", AppScreen.Watchlist.route)

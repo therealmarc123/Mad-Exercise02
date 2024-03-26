@@ -1,4 +1,4 @@
-package com.example.movieappmad24.models.widgets
+package com.example.movieappmad24.widgets
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
