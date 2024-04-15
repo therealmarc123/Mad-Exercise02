@@ -1,13 +1,11 @@
 package com.example.movieappmad24.navigation
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -20,24 +18,14 @@ import androidx.navigation.NavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SimpleTopAppBar(title: String = "Movie App", navController: NavController? = null) {
+fun SimpleTopAppBar(title: String, navigationIcons: @Composable () -> Unit = {},) {
     CenterAlignedTopAppBar(
         title = { Text(text = title) },
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
             titleContentColor = MaterialTheme.colorScheme.primary
         ),
-        navigationIcon = {
-            if (navController != null)
-            {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = "Navigate Back"
-                    )
-                }
-            }
-        }
+        navigationIcon = navigationIcons
     )
 }
 

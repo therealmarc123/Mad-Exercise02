@@ -10,10 +10,12 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.example.movieappmad24.models.movieCards.MovieList
 import com.example.movieappmad24.navigation.*
-import com.example.movieappmad24.models.getMovies
+import com.example.movieappmad24.viewmodels.MoviesViewModel
 
 @Composable
-fun WatchlistScreen(navController: NavController) {
+fun WatchlistScreen(navController: NavController,
+                    moviesViewModel: MoviesViewModel
+) {
     Scaffold(
         topBar = {
             SimpleTopAppBar(title = "Your Watchlist")
@@ -29,8 +31,10 @@ fun WatchlistScreen(navController: NavController) {
             color = MaterialTheme.colorScheme.background
         ) {
             MovieList(
-                movies = getMovies(),
-                navController = navController
+                modifier = Modifier.padding(padding),
+                movies = moviesViewModel.likedMovies,
+                navController = navController,
+                viewModel = moviesViewModel
             )
         }
     }

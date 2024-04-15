@@ -25,7 +25,6 @@ fun DisplayPoster(movie: Movie)
     )
     {
         DisplayPoster(movie.title, movie.images)
-        MovieLike()
     }
 }
 

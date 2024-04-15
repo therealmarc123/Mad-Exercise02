@@ -7,16 +7,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.movieappmad24.models.getMovies
 import com.example.movieappmad24.models.movieCards.MovieList
 
 import androidx.navigation.NavController
 import com.example.movieappmad24.navigation.*
+import com.example.movieappmad24.viewmodels.MoviesViewModel
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navController: NavController,moviesViewModel: MoviesViewModel) {
     Scaffold(
-        topBar = { SimpleTopAppBar() },
+        topBar = { SimpleTopAppBar(title = "Movie App") },
         bottomBar = { SimpleBottomAppBar(navController) }
     ) { padding ->
         Surface(
@@ -26,8 +26,13 @@ fun HomeScreen(navController: NavController) {
 
             color = MaterialTheme.colorScheme.background
         ) {
-            MovieList(movies = getMovies(),
-                navController = navController
+
+
+            MovieList(
+                movies = moviesViewModel.movies,
+                navController = navController,
+                modifier = Modifier.padding(padding),
+                viewModel = moviesViewModel
             )
         }
     }
